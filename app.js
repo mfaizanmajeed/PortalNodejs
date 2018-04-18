@@ -80,14 +80,14 @@ function init() {
   });
 }
 
-
+/*
 app.get('/',function (request, response) {
   console.log('sd');
-});
+});*/
 
 app.get('/login', function (request, response) {
-  console.log(request);
-  request_api.gettoken(request,response);
+  //console.log(request.query);
+  request_api.gettoken(request,response,request.query);
   //console.log("hello");
   //
 });

@@ -1,15 +1,16 @@
 var request = require('request');
 var http = require("https");  
      
-    function gettoken(res,req)
+    function gettoken(res,req,user_1)
     {
+      console.log(user_1);
       var options = { method: 'POST',
       url: 'https://x45k5kd3hj.execute-api.us-east-2.amazonaws.com/dev/login',
       qs: { regId: 'ham245' },
       headers: 
        { 'postman-token': 'b3c718af-c24c-b314-12db-8e4bfadf81e3',
          'cache-control': 'no-cache',
-         authorization: 'Basic ' + Buffer.from('hak@inbox:123').toString('base64') } };
+         authorization: 'Basic ' + Buffer.from(user_1.user).toString('base64') } };
 
         
          var hn= request(options, function (error, response, body) {
